@@ -257,7 +257,7 @@ static inline void writeUInt32(AbstractFile* file, uint32_t data) {
 	ASSERT(file->write(file, &data, sizeof(data)) == sizeof(data), "fwrite");
 }
 
-static inline uint32_t readUInt64(AbstractFile* file) {
+static inline uint64_t readUInt64(AbstractFile* file) {
 	uint64_t data;
 	
 	ASSERT(file->read(file, &data, sizeof(data)) == sizeof(data), "fread");
@@ -275,18 +275,22 @@ static inline void writeUInt64(AbstractFile* file, uint64_t data) {
 extern "C" {
 #endif
 	void outResources(AbstractFile* file, AbstractFile* out);
-
+	
+	unsigned char* decodeBase64(char* toDecode, size_t* dataLength);
+	void writeBase64(AbstractFile* file, unsigned char* data, size_t dataLength, int tabLength, int width);
+	char* convertBase64(unsigned char* data, size_t dataLength, int tabLength, int width);
+	
 	uint32_t CRC32Checksum(uint32_t* crc, const unsigned char *buf, size_t len);
 	uint32_t MKBlockChecksum(uint32_t* ckSum, const unsigned char* data, size_t len);
-
+	
 	void BlockSHA1CRC(void* token, const unsigned char* data, size_t len);
 	void BlockCRC(void* token, const unsigned char* data, size_t len);
 	void CRCProxy(void* token, const unsigned char* data, size_t len);
-
+	
 	void SHA1Init(SHA1_CTX* context);
 	void SHA1Update(SHA1_CTX* context, const uint8_t* data, const size_t len);
 	void SHA1Final(uint8_t digest[SHA1_DIGEST_SIZE], SHA1_CTX* context);
-
+	
 	void flipUDIFChecksum(UDIFChecksum* o, char out);
 	void readUDIFChecksum(AbstractFile* file, UDIFChecksum* o);
 	void writeUDIFChecksum(AbstractFile* file, UDIFChecksum* o);
@@ -294,28 +298,28 @@ extern "C" {
 	void writeUDIFID(AbstractFile* file, UDIFID* o);
 	void readUDIFResourceFile(AbstractFile* file, UDIFResourceFile* o);
 	void writeUDIFResourceFile(AbstractFile* file, UDIFResourceFile* o);
-
+	
 	ResourceKey* readResources(AbstractFile* file, UDIFResourceFile* resourceFile);
 	void writeResources(AbstractFile* file, ResourceKey* resources);
 	void releaseResources(ResourceKey* resources);
-
+	
 	NSizResource* readNSiz(ResourceKey* resources);
 	ResourceKey* writeNSiz(NSizResource* nSiz);
 	void releaseNSiz(NSizResource* nSiz);
-
+	
 	extern const char* plistHeader;
 	extern const char* plistFooter;
-
+	
 	ResourceKey* getResourceByKey(ResourceKey* resources, const char* key);
 	ResourceData* getDataByID(ResourceKey* resource, int id);
 	ResourceKey* insertData(ResourceKey* resources, const char* key, int id, const char* name, const char* data, size_t dataLength, uint32_t attributes);
 	ResourceKey* makePlst();
 	ResourceKey* makeSize(HFSPlusVolumeHeader* volumeHeader);
-
+	
 	void flipDriverDescriptorRecord(DriverDescriptorRecord* record, char out);
 	void flipPartition(Partition* partition, char out, unsigned int BlockSize);
 	void flipPartitionMultiple(Partition* partition, char multiple, char out, unsigned int BlockSize);
-
+	
 	void readDriverDescriptorMap(AbstractFile* file, ResourceKey* resources);
 	DriverDescriptorRecord* createDriverDescriptorMap(uint32_t numSectors, unsigned int BlockSize);
 	int writeDriverDescriptorMap(int pNum, AbstractFile* file, DriverDescriptorRecord* DDM, unsigned int BlockSize, ChecksumFunc dataForkChecksum, void* dataForkToken, ResourceKey **resources);
@@ -324,13 +328,13 @@ extern "C" {
 	int writeApplePartitionMap(int pNum, AbstractFile* file, Partition* partitions, unsigned int BlockSize, ChecksumFunc dataForkChecksum, void* dataForkToken, ResourceKey **resources, NSizResource** nsizIn);
 	int writeATAPI(int pNum, AbstractFile* file, unsigned int BlockSize, ChecksumFunc dataForkChecksum, void* dataForkToken, ResourceKey **resources, NSizResource** nsizIn);
 	int writeFreePartition(int pNum, AbstractFile* outFile, uint32_t offset, uint32_t numSectors, ResourceKey** resources);
-
+	
 	void extractBLKX(AbstractFile* in, AbstractFile* out, BLKXTable* blkx);
 	BLKXTable* insertBLKX(AbstractFile* out, AbstractFile* in, uint32_t firstSectorNumber, uint32_t numSectors, uint32_t blocksDescriptor,
-				uint32_t checksumType, ChecksumFunc uncompressedChk, void* uncompressedChkToken, ChecksumFunc compressedChk,
-				void* compressedChkToken, Volume* volume, int addComment);
-
-
+						  uint32_t checksumType, ChecksumFunc uncompressedChk, void* uncompressedChkToken, ChecksumFunc compressedChk,
+						  void* compressedChkToken, Volume* volume, int addComment);
+	
+	
 	int extractDmg(AbstractFile* abstractIn, AbstractFile* abstractOut, int partNum);
 	int buildDmg(AbstractFile* abstractIn, AbstractFile* abstractOut, unsigned int BlockSize);
 	int convertToISO(AbstractFile* abstractIn, AbstractFile* abstractOut);
