@@ -3,8 +3,8 @@
 
 #include "abstractfile.h"
 #include "8900.h"
-#include "xpwn/img2.h"
-#include "xpwn/lzssfile.h"
+#include "img2.h"
+#include "lzssfile.h"
 
 #ifdef __cplusplus
 extern "C" {

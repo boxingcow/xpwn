@@ -6,7 +6,7 @@
 
 #include "common.h"
 #include "8900.h"
-#include "xpwn/img2.h"
+#include "img2.h"
 
 void flipApple8900Header(Apple8900Header* header) {
 	FLIPENDIAN(header->magic);
