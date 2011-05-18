@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <string.h>
+
 #include "common.h"
-#include <xpwn/img3.h>
-#include <xpwn/libxpwn.h>
+#include "img3.h"
+#include "libxpwn.h"
 
 static const uint8_t x24kpwn_overflow_data[] = {
   0x12, 0x01, 0x00, 0x02, 0x00, 0x00, 0x00, 0x40, 0xac, 0x05, 0x81, 0x12,

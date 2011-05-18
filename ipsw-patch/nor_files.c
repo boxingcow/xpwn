@@ -1,9 +1,9 @@
 #include "common.h"
-#include <xpwn/8900.h>
-#include <xpwn/img2.h>
-#include <xpwn/img3.h>
-#include <xpwn/lzssfile.h>
-#include <xpwn/ibootim.h>
+#include "8900.h"
+#include "img2.h"
+#include "img3.h"
+#include "lzssfile.h"
+#include "ibootim.h"
 
 AbstractFile* openAbstractFile(AbstractFile* file) {
 	uint32_t signatureBE;

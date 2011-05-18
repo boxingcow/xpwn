@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <dmg/dmg.h>
-#include <dmg/filevault.h>
-#include <inttypes.h>
+#include "dmg.h"
+#include "filevault.h"
+#include "inttypes.h"
 
 #ifdef HAVE_CRYPT
 

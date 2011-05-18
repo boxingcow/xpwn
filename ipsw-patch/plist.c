@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <common.h>
-#include <abstractfile.h>
-#include <xpwn/plist.h>
+#include "common.h"
+#include "abstractfile.h"
+#include "plist.h"
 
 Tag* getNextTag(char** xmlPtr) {
 	char* xml;

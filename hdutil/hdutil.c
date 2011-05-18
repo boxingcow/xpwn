@@ -4,14 +4,15 @@
 #include <time.h>
 #include <string.h>
 #include <unistd.h>
-#include <hfs/hfsplus.h>
-#include <dmg/dmgfile.h>
-#include <dmg/filevault.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <dirent.h>
-#include "hfs/hfslib.h"
 #include <inttypes.h>
+
+#include "hfslib.h"
+#include "hfsplus.h"
+#include "dmgfile.h"
+#include "filevault.h"
 
 char endianness;
 

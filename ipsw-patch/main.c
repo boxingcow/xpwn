@@ -1,18 +1,19 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <string.h>
-#include "common.h"
-#include <xpwn/libxpwn.h>
-#include <xpwn/nor_files.h>
-#include <dmg/dmg.h>
-#include <dmg/filevault.h>
-#include <xpwn/ibootim.h>
-#include <xpwn/plist.h>
-#include <xpwn/outputstate.h>
-#include <hfs/hfslib.h>
-#include <dmg/dmglib.h>
-#include <xpwn/pwnutil.h>
 #include <stdio.h>
+
+#include "common.h"
+#include "libxpwn.h"
+#include "nor_files.h"
+#include "dmg.h"
+#include "filevault.h"
+#include "ibootim.h"
+#include "plist.h"
+#include "outputstate.h"
+#include "hfslib.h"
+#include "dmglib.h"
+#include "pwnutil.h"
 
 #ifdef WIN32
 #include <windows.h>

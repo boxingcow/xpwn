@@ -3,9 +3,9 @@
 #include <unzip.h>
 #include <common.h>
 #include <string.h>
-#include <dmg/dmgfile.h>
-#include <dmg/filevault.h>
-#include <xpwn/plist.h>
+#include "dmgfile.h"
+#include "filevault.h"
+#include "plist.h"
 
 #define DEFAULT_BUFFER_SIZE (1 * 1024 * 1024)
 char endianness;

@@ -4,7 +4,7 @@
 
 #include "common.h"
 #include "abstractfile.h"
-#include <xpwn/img2.h>
+#include "img2.h"
 
 void flipImg2Header(Img2Header* header) {
 	FLIPENDIANLE(header->signature);

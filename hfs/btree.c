@@ -1,5 +1,6 @@
 #include <stdlib.h>
-#include <hfs/hfsplus.h>
+
+#include "hfsplus.h"
 
 BTNodeDescriptor* readBTNodeDescriptor(uint32_t num, BTree* tree) {
   BTNodeDescriptor* descriptor;

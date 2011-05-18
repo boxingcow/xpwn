@@ -3,12 +3,13 @@
 #include <string.h>
 #include <dirent.h>
 #include <openssl/sha.h>
-#include <xpwn/libxpwn.h>
-#include <xpwn/plist.h>
-#include <xpwn/outputstate.h>
-#include <xpwn/pwnutil.h>
-#include <xpwn/nor_files.h>
-#include <hfs/hfslib.h>
+
+#include "libxpwn.h"
+#include "plist.h"
+#include "outputstate.h"
+#include "pwnutil.h"
+#include "nor_files.h"
+#include "hfslib.h"
 
 #define BUFFERSIZE (1024*1024)
 

@@ -1,13 +1,14 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <png.h>
+
+#include "nor_files.h"
 #include "common.h"
 #include "abstractfile.h"
-#include <xpwn/libxpwn.h>
-#include <xpwn/ibootim.h>
-#include <xpwn/lzss.h>
-#include <png.h>
-#include <xpwn/nor_files.h>
+#include "libxpwn.h"
+#include "ibootim.h"
+#include "lzss.h"
 
 void flipIBootIMHeader(IBootIMHeader* header) {
 	FLIPENDIANLE(header->unknown);

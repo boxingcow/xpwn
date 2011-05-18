@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "common.h"
-#include <dmg/dmg.h>
-#include <xpwn/outputstate.h>
 #include <zip.h>
 #include <unzip.h>
+
+#include "common.h"
+#include "dmg.h"
+#include "outputstate.h"
 
 #ifdef WIN32
 #include <windows.h>

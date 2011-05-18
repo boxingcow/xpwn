@@ -5,7 +5,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include <xpwn/outputstate.h>
+
+#include "outputstate.h"
 
 #define SHGFP_TYPE_CURRENT 0
 

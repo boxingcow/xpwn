@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <bzlib.h>
+
 #include "abstractfile.h"
 
 #define BUFFERSIZE (256 * 1024)

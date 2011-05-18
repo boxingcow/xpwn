@@ -1,7 +1,8 @@
-#include "common.h"
-#include <xpwn/libxpwn.h>
 #include <stdarg.h>
 #include <string.h>
+
+#include "common.h"
+#include "libxpwn.h"
 
 LogMessageCallback logCallback;
 char endianness;

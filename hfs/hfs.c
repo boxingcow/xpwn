@@ -3,12 +3,12 @@
 #include <stdint.h>
 #include <string.h>
 #include <unistd.h>
-#include <hfs/hfsplus.h>
 #include <dirent.h>
 
-#include <hfs/hfslib.h>
+#include "hfsplus.h"
+#include "hfslib.h"
 #include "abstractfile.h"
-#include <inttypes.h>
+#include "inttypes.h"
 
 char endianness;
 

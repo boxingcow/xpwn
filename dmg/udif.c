@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include <dmg/dmg.h>
+#include "dmg.h"
 
 void flipUDIFChecksum(UDIFChecksum* o, char out) {
   int i;

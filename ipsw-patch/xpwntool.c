@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include "xpwn/libxpwn.h"
-#include "xpwn/nor_files.h"
+
+#include "libxpwn.h"
+#include "nor_files.h"
 
 #define BUFFERSIZE (1024*1024)
 

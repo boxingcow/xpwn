@@ -1,10 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <xpwn/libxpwn.h>
-#include "abstractfile.h"
-#include <xpwn/nor_files.h>
-#include <xpwn/ibootim.h>
 #include <string.h>
+
+#include "libxpwn.h"
+#include "abstractfile.h"
+#include "nor_files.h"
+#include "ibootim.h"
 
 void print_usage() {
 	printf("usage:\timagetool extract <source.img2/3> <destination.png> [iv] [key]\n");
